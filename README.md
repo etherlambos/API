@@ -62,4 +62,4 @@
 `front means - in front of the base graphic
 back means - behind the base graphic
 Other than that no specific order needs to be considered when putting together the graphics.`
-
+* "path": `base URL for retrieving graphics.`
