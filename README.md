@@ -50,11 +50,16 @@
 
     http://etherlambos.io/API/getlambo.php?id=214
 
-* **Notes:**
-<_Explaining the "options" & "display" field:
-options contains the path to the corresponding graphics regarding base and customized options
-display contains information on how to properly put the graphics together (e.g. via svg)
-front means - in front of the base graphic
+* **Token Metadata:**
+
+* "model": 
+`represents the base model of the Etherlambo. For example 1 would be model Vitalik, 2 would be model Satoshi.`
+* "serialno": `represents the unique serial number of each lambo model. Model Satoshi has for example a limited supply of 100 tokens. Every token has its own unique serial number reaching from 1 - 100. The same goes for other models.`
+* "name": `represents the name of the model.` 
+* "base": `path of the model base graphic.`
+* "options": `contains the path to the corresponding graphics regarding base and customized options.`
+* "display": `contains information on how to properly put the graphics together (e.g. via svg).`
+`front means - in front of the base graphic
 back means - behind the base graphic
-Other than that no specific order needs to be considered when putting together the graphics
-_>
+Other than that no specific order needs to be considered when putting together the graphics.`
+
