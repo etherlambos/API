@@ -18,7 +18,7 @@
 
    **Required:**
  
-   `id=[integer]`
+   `id/[integer]`
 
 
 * **Data Params**
