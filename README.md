@@ -1,11 +1,11 @@
 # API
-**Etherlambos API V 0.1**
+**Etherlambos API V 0.2**
 ----
   <_Returns data about an Etherlambo. Returns model, location of graphics and additional information in order for a third party to properly display the Etherlambo._>
 
 * **URL**
 
-  <_API/getlambo.php_>
+  <_API/lambo/_>
 
 * **Method:**
   
@@ -25,41 +25,73 @@
 
   <_None_>
 
-* **Success Response:**
-  
-  <_"status" : "ok" - everything worked well_>
-    
-    **Content:** 	`{"status":"ok","model":4,"serialno":12,"name":"Charlie","base":"svg-charlie\/charlie_base.png","options":["svg-charlie\/charlie_frontsplitter.png","svg-charlie\/charlie_rearwing.png","svg-charlie\/charlie_frontlips.png"],"display":["front","back","front"],"path":"http:\/\/www.etherlambos.io\/"}`
+* **Content:** 	`{
+    "attributes": [
+        {
+            "trait_type": "Upgrade No.:1",
+            "value": "Modified exhaust system Race"
+        },
+        {
+            "trait_type": "Upgrade No.:2",
+            "value": "Improved engine electronic"
+        },
+        {
+            "trait_type": "Upgrade No.:3",
+            "value": "stroker kit \"devil\""
+        },
+        {
+            "trait_type": "Upgrade No.:4",
+            "value": "Side vents"
+        },
+        {
+            "trait_type": "Upgrade No.:5",
+            "value": "Hood scoops"
+        },
+        {
+            "trait_type": "Upgrade No.:6",
+            "value": "Large rear wing"
+        },
+        {
+            "trait_type": "Top Speed (km/h)",
+            "value": 520
+        },
+        {
+            "trait_type": "Max. Power (hp)",
+            "value": 1055
+        },
+        {
+            "trait_type": "Accelaration (0 to 100 km/h in sec)",
+            "value": 1.75
+        },
+        {
+            "trait_type": "Chassis",
+            "value": "Carbon Fiber Monocoque"
+        },
+        {
+            "trait_type": "Aerodynamics",
+            "value": "Adjustable rear wing; chin spoiler with splitter"
+        },
+        {
+            "trait_type": "Colour",
+            "value": "Bitcoin-Gold"
+        }
+    ],
+    "description": "Satoshi Bitcoin Supercar",
+    "external_url": "https://www.etherlambos.io/index.php?lambo=112",
+    "image": "https://www.etherlambos.io/API/render/lambo_112.png",
+    "name": "Satoshi Serial No.: 12"
+}`
  
-* **Error Response:**
-
-	 <_"status" : "some error occurred" - 
-	Customizations & Serial No could not be retrieved. 
-	While requesting data from the next node some timeout error occurred. The fields
-	"model", "base" as well as "options" & "display" provide the correct base information regarding this lambo._>
-
-    **Content:** `{"status":"some error 	occurred.","model":2,"serialno":0,"name":"Satoshi","base":"svg-satoshi\/satoshi_base.png","options":["svg-satoshi\/satoshi_rearwing.png"	],"display":["back"],"path":"http:\/\/www.etherlambos.io\/"}`
-
-  OR
-
- 	<_"status" : "lambo not found." - id of lambo does not exist_>
-
-    **Content:** `{"status":"lambo not 	found.","model":0,"serialno":0,"name":"","base":"","options":[],"display":[],"path":"http:\/\/www.etherlambos.io\/"}`
-
 * **Sample Call:**
 
-    http://etherlambos.io/API/getlambo.php?id=214
+    https://www.etherlambos.io/API/lambo/id/112
 
 * **Token Metadata:**
 
-* "model": 
-`represents the base model of the Etherlambo. For example 1 would be model Vitalik, 2 would be model Satoshi.`
-* "serialno": `represents the unique serial number of each lambo model. Model Satoshi has for example a limited supply of 100 tokens. Every token has its own unique serial number reaching from 1 - 100. The same goes for other models.`
-* "name": `represents the name of the model.` 
-* "base": `path of the model base graphic.`
-* "options": `contains the path to the corresponding graphics regarding base and customized options.`
-* "display": `contains information on how to properly put the graphics together (e.g. via svg).`
-`front means - in front of the base graphic
-back means - behind the base graphic
-Other than that no specific order needs to be considered when putting together the graphics.`
-* "path": `base URL for retrieving graphics.`
+* "name": 
+`Represents the base model of the Etherlambo and the serial number for each model.`
+* "image": `contains the path to the corresponding graphics regarding base and customized options.`
+* "external_url": `represents the direct link to the etherlambos.io website.` 
+* "description": `Description of the model.`
+* "attributes": `lists all attributes as traits`
+* "trait_type": `contains trait_type and value of each individual lambo.`
